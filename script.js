@@ -12,7 +12,14 @@ function createRow(squareCount) {
 function createSquare() {
     const squareDiv = document.createElement("div");
     squareDiv.className = "square";
+
+    squareDiv.addEventListener('mouseenter', ()  => colorChangeWhenHovered(squareDiv));
+
     return squareDiv;
+}
+
+function colorChangeWhenHovered (squareDiv) {
+    squareDiv.classList.add('hovered');
 }
 
 

@@ -15,3 +15,7 @@
     border: 3px solid black;
     /* margin: 5px; */
 }
+
+.square.hovered {
+    background-color: lightpink;
+}
