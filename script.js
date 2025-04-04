@@ -2,16 +2,31 @@ function createRow(squareCount) {
     const rowDiv = document.createElement("div");
     rowDiv.className = "row";
 
+    const squareSize = calculateSquareSize(squareCount);
+
     for (let i=0; i < squareCount; i++) {
-        const square = createSquare();
+        const square = createSquare(squareSize);
         rowDiv.appendChild(square);
     }
     return rowDiv;
 }
 
-function createSquare() {
+function calculateSquareSize(squareCount){
+    const containerDiv = document.getElementsByClassName("container")[0];
+    const containerWidth = containerDiv.clientWidth;
+    const containerHeight = containerDiv.clientHeight;
+
+    return ((Math.min(containerWidth, containerHeight) / squareCount) / 2);
+    
+}
+
+function createSquare(squareSize) {
+    const borderSize = 3;
+
     const squareDiv = document.createElement("div");
     squareDiv.className = "square";
+    squareDiv.style.border = `${borderSize}px solid black`
+    squareDiv.style.padding = `${squareSize-borderSize}px`;
 
     squareDiv.addEventListener('mouseenter', ()  => colorChangeWhenHovered(squareDiv));
 
