@@ -32,5 +32,18 @@ function createGrid(squareCountPerSide) {
     }
 }
 
+function playerCountInput() {
+
+    while (true) {
+        let playerCountInput = prompt('Enter number of squares per side count (100 maximum)');
+        playerCountInput = Number(playerCountInput);
+        if (!isNaN(playerCountInput) && playerCountInput !== null && playerCountInput !== "" && playerCountInput > 0 && playerCountInput <= 100) {
+          break;  // Exit the loop if the input is valid
+        } else {
+          alert("Invalid input. Please enter a valid number under 100.");
+        }
+      }
+}
+
 
 createGrid(16);
