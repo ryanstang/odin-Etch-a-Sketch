@@ -1,5 +1,5 @@
 body {
-    margin-top: 25px;
+    margin: 25px;
     gap: 10px;
     display: flex;
     flex-direction: column;
