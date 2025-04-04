@@ -29,12 +29,20 @@ function createSquare(squareSize) {
     squareDiv.style.padding = `${squareSize-borderSize}px`;
 
     squareDiv.addEventListener('mouseenter', ()  => colorChangeWhenHovered(squareDiv));
+    squareDiv.addEventListener('mouseleave', ()  => colorChangeWhenunHovered(squareDiv));
+
 
     return squareDiv;
 }
 
 function colorChangeWhenHovered (squareDiv) {
-    squareDiv.classList.add('hovered');
+    squareDiv.style.transition = '';
+    squareDiv.style.backgroundColor = 'lightpink';
+}
+
+function colorChangeWhenunHovered (squareDiv) {
+    squareDiv.style.transition = 'background-color 5s ease-in-out';
+    squareDiv.style.backgroundColor = 'white';
 }
 
 

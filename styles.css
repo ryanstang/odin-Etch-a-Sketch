@@ -31,4 +31,10 @@ body {
 
 .square.hovered {
     background-color: lightpink;
+    transition: background-color 0.5s ease-in-out;
+}
+
+.square.unhovered {
+    background-color: lightpink;
+    transition: background-color 0.5s ease-in-out;
 }
