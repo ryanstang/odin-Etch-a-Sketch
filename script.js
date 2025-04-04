@@ -21,7 +21,7 @@ function calculateSquareSize(squareCount){
 }
 
 function createSquare(squareSize) {
-    const borderSize = 3;
+    const borderSize = 1.5;
 
     const squareDiv = document.createElement("div");
     squareDiv.className = "square";
@@ -37,7 +37,8 @@ function createSquare(squareSize) {
 
 function colorChangeWhenHovered (squareDiv) {
     squareDiv.style.transition = '';
-    squareDiv.style.backgroundColor = 'lightpink';
+    const randomColor = '#' + (((1 << 24) * Math.random()) | 0).toString(16);
+    squareDiv.style.backgroundColor = `${randomColor}`;
 }
 
 function colorChangeWhenunHovered (squareDiv) {
